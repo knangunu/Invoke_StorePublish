@@ -1,1 +1,39 @@
+name: myFirstPublish
+on:
+  workflow_dispatch:
+    inputs:
+      interactive:
+        description: 'interactive'
+        required: true
+        default: 'true'
+      productID:
+        description: 'productID'
+        required: true
+        default: ''
+      command:
+        description: 'command'
+        required: true
+        default: ''
 
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Run AutoPublisher
+      uses: adityak1429/autopublisher_cli@main
+      with:
+        tenant-id: ${{ secrets.AZURE_AD_TENANT_ID }}
+        client-id: ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }}
+        client-secret: ${{ secrets.AZURE_AD_APPLICATION_SECRET }}
+        seller-id: ${{ secrets.SELLER_ID }}
+        command: ${{ github.event.inputs.command }}
+        type: msix
+        interactive : ${{ github.event.inputs.interactive }}
+        product-id:  ${{ github.event.inputs.productID }}
+        package: "${{ github.workspace }}/dupmy123/app"
+        photos-path: "${{ github.workspace }}/dupmy123/pics"
+        
