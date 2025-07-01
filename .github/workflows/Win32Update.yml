@@ -1,0 +1,31 @@
+name: Win32Update
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: 'Command to run with MSStore CLI'
+        required: true
+        default: 'publish'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Run AutoPublisher
+      uses: adityak1429/autopublisher_cli@main
+      with:
+        tenant-id: ${{ secrets.AZURE_AD_TENANT_ID }}
+        client-id: ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }}
+        client-secret: ${{ secrets.AZURE_AD_APPLICATION_SECRET }}
+        seller-id: ${{ secrets.SELLER_ID }}
+        command: ${{ github.event.inputs.command }}
+        product-id: XP9LWZPDDM5187
+        type: win32
+        package: '{"packages":[{"packageUrl":"https://dl.acronis.com/u/AcronisCyberProtectHomeOffice.exe","languages":["en"],"architectures":["X64"],"installerParameters":"-silent_installation","isSilentInstall":false,"genericDocUrl":"https://docs.contoso.com/doclink","errorDetails":[{"errorScenario":"installationCancelledByUser"},{"errorScenario":"applicationAlreadyExists"},{"errorScenario":"installationAlreadyInProgress"},{"errorScenario":"diskSpaceIsFull"},{"errorScenario":"rebootRequired"},{"errorScenario":"networkFailure"},{"errorScenario":"packageRejectedDuringInstallation"},{"errorScenario":"installationSuccessful"},{"errorScenario":"miscellaneous"}],"packageType":"exe","packageId":"94375341"}]}'
+        photos-path: "${{ github.workspace }}/exeapp/pics"
+        json-file-path: "${{ github.workspace }}/exeapp/metadata.json"
+        
