@@ -1,23 +1,23 @@
-name: myFirstPublish
+name: MSIXUpdate
 on:
   workflow_dispatch:
     inputs:
+      command:
+        description: 'Command to run with MSStore CLI'
+        required: true
+        default: 'publish'
       interactive:
         description: 'interactive'
         required: true
         default: 'true'
-      productID:
-        description: 'productID'
+      download:
+        description: 'download'
         required: true
-        default: ''
-      command:
-        description: 'command'
-        required: true
-        default: ''
+        default: 'true'
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
@@ -31,9 +31,12 @@ jobs:
         client-secret: ${{ secrets.AZURE_AD_APPLICATION_SECRET }}
         seller-id: ${{ secrets.SELLER_ID }}
         command: ${{ github.event.inputs.command }}
-        type: msix
         interactive : ${{ github.event.inputs.interactive }}
-        product-id:  ${{ github.event.inputs.productID }}
-        package: "${{ github.workspace }}/dupmy123/app"
-        photos-path: "${{ github.workspace }}/dupmy123/pics"
+        download : ${{ github.event.inputs.download }}
+        product-id: 9NP0T3QQXL70
+        type: msix
+        package: "${{ github.workspace }}/FF/app"
+        photos-path: "${{ github.workspace }}/FF/pics"
+        json-file-path: "${{ github.workspace }}/FF/metadata.json"
+        append: false
         
