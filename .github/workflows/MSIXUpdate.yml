@@ -23,8 +23,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Run AutoPublisher
-      uses: knangunu/githubAction@main
+    - name: Run autoPublisher_cli
+      uses: knangunu/autoPublisher_cli@main
       with:
         tenant-id: ${{ secrets.AZURE_AD_TENANT_ID }}
         client-id: ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }}
