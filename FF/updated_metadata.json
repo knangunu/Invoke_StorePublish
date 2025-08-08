@@ -1,26 +1,8 @@
 {
-  "listings": [
-    {
-      "language": "en-us",
-      "title": "FitnessFuel",
-      "description": "This app does amazing things!",
-      "keywords": ["productivity", "tools", "awesome"],
-      "images": [
-        {
-          "fileName": "screenshot1.png",
-          "imageType": "Screenshot"
-        }
-      ]
-    }
-  ],
+
   "properties": {
     "privacyPolicyUrl": "https://example.com/privacy",
     "supportUrl": "https://example.com/support",
     "websiteUrl": "https://example.com"
-  },
-  "availability": {
-    "market": "US",
-    "visibility": "Public",
-    "pricing": "Free"
   }
 }
