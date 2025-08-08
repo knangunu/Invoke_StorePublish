@@ -8,7 +8,6 @@ jobs:
     - uses: microsoft/setup-msstore-cli@v1.1
     - run: msstore reconfigure --tenantId ${{ secrets.AZURE_AD_TENANT_ID }} --sellerId ${{ secrets.SELLER_ID }} --clientId ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }} --clientSecret ${{ secrets.AZURE_AD_APPLICATION_SECRET }}
     - run: msstore apps list
-    - name: Debug metadata.json
     - run: |
         echo "Checking if metadata.json exists..."
         ls -l FF/metadata.json || echo "File not found!"
