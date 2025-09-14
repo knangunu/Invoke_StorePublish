@@ -14,5 +14,5 @@ jobs:
           $json = msstore submission get 9NP0T3QQXL70 | ConvertFrom-Json -AsHashtable
           $json.Listings.'en-us'.BaseListing.Description = 'From GitHub action'
           $payload = $json | ConvertTo-Json -Depth 100 -Compress
-          msstore submission updateMetadata 9NP0T3QQXL70 "$payload" -v
+          msstore submission updateMetadata 9NP0T3QQXL70 "$payload"
           msstore submission publish 9NP0T3QQXL70
