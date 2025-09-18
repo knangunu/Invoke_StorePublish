@@ -6,7 +6,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: microsoft/setup-msstore-cli@v1.1
+    - uses: microsoft/microsoft-store-apppublisher@v1.1
     - run: msstore reconfigure --tenantId ${{ secrets.AZURE_AD_TENANT_ID }} --sellerId ${{ secrets.SELLER_ID }} --clientId ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }} --clientSecret ${{ secrets.AZURE_AD_APPLICATION_SECRET }}
     - name: Update Metadata and Publish
       shell: pwsh
