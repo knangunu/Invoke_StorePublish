@@ -1,4 +1,4 @@
-name: Win32AppMetadataUpdatesToMSStore
+name: AppMetadataUpdatesToMSStore
 on:   
       workflow_dispatch:
 jobs:
@@ -11,8 +11,8 @@ jobs:
     - name: Update Metadata and Publish
       shell: pwsh
       run: |
-          $json = msstore submission get -m listings 28d4b502-6be7-414d-950d-680de94a32bb | ConvertFrom-Json -AsHashtable
-          $json.Listings[0].Description='From MSStore CLI'
+          $json = msstore submission get 9NP0T3QQXL70 | ConvertFrom-Json -AsHashtable
+          $json.Listings.'en-us'.BaseListing.Description = 'From GitHub action'
           $payload = $json | ConvertTo-Json -Depth 100 -Compress
-          msstore submission updateMetadata 28d4b502-6be7-414d-950d-680de94a32bb "$payload"
-          msstore submission publish 28d4b502-6be7-414d-950d-680de94a32bb
+          msstore submission updateMetadata 9NP0T3QQXL70 "$payload"
+          msstore submission publish 9NP0T3QQXL70
