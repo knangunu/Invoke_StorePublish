@@ -1,0 +1,27 @@
+{
+  "Listings": 
+    {
+      "Language": "en",
+      "Description": "Test Listing Update from CLI",
+      "WhatsNew": "Test Listing Update from CLI",
+      "ProductFeatures": ["Test Listing Update from CLI"],
+      "ShortDescription": "Test Listing Update from CLI",
+      "SearchTerms": [
+        "CyberProtectHomeOffice",
+        "Acronis",
+        "cyber protect"
+      ],
+      "AdditionalLicenseTerms": "Proprietary",
+      "Copyright": "Test Listing Update from CLI",
+      "DevelopedBy": "Test Listing Update from CLI",
+      "Requirements": [
+        {
+          "MinimumRequirement": null,
+          "RecommendedRequirement": null,
+          "HardwareItemType": null
+        }
+      ],
+      "SortTitle": "Test Listing Update from CLI",
+      "ContactInfo": "Test Listing Update from CLI"
+    }
+}
