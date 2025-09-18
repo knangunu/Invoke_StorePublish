@@ -1,6 +1,6 @@
-name: AppMetadataUpdatesToMSStore
-on:   
-      workflow_dispatch:
+name: Win32AppMetadataUpdatesToMSStore
+on:
+     workflow_dispatch:
 jobs:
   build:
     runs-on: windows-latest
