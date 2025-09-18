@@ -11,8 +11,6 @@ jobs:
     - name: Update Metadata and Publish
       shell: pwsh
       run: |
-          $json = msstore submission get -m listings 28d4b502-6be7-414d-950d-680de94a32bb | ConvertFrom-Json -AsHashtable
-          $json.Listings[0].Description='From MSStore CLI'
-          $payload = $json | ConvertTo-Json -Depth 100 -Compress
-          msstore submission updateMetadata 28d4b502-6be7-414d-950d-680de94a32bb "$payload"
+          $listings = Get-Content -Raw "listing-update.json"
+          msstore submission updateMetadata 28d4b502-6be7-414d-950d-680de94a32bb $listings
           msstore submission publish 28d4b502-6be7-414d-950d-680de94a32bb
