@@ -2,18 +2,18 @@
   "Listings": 
     {
       "Language": "en",
-      "Description": "Looking for a powerful cybersecurity solution for your devices? Features essential security, online privacy, and personal information awareness",
-      "WhatsNew": "Protects against personal information leaks",
-      "ProductFeatures": ["Autmatic scan", "online privacy"],
-      "ShortDescription": "Features essential security for ms office",
+      "Description": "Test Listing Update from GitHub",
+      "WhatsNew": "Test Listing Update from GitHub",
+      "ProductFeatures": ["Test Listing Update from GitHub"],
+      "ShortDescription": "Test Listing Update from GitHub",
       "SearchTerms": [
         "CyberProtectHomeOffice",
         "Acronis",
         "cyber protect"
       ],
       "AdditionalLicenseTerms": "Proprietary",
-      "Copyright": "Microsoft 2025",
-      "DevelopedBy": "Test User",
+      "Copyright": "Test Listing Update from GitHub",
+      "DevelopedBy": "Test Listing Update from GitHub",
       "Requirements": [
         {
           "MinimumRequirement": null,
@@ -21,6 +21,7 @@
           "HardwareItemType": null
         }
       ],
-      "ContactInfo": "testUser@outlook.com"
+      "SortTitle": "Test Listing Update from GitHub",
+      "ContactInfo": "Test Listing Update from GitHub"
     }
 }
